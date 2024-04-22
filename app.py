@@ -30,12 +30,14 @@ while True:
                 print(df)
 
                 for index, row in df.iterrows():
-                    file_name = f"{output_dir}/{row['nome']}.txt"
-                    with open(file_name, 'w') as file:
-                        file.write(f"Nome: {row['nome']}\n")
-                        file.write(f"Estado Civil: {row['estado civil']}\n")
-                        file.write(f"Profissão: {row['profissão']}\n")
-                        file.write(f"Valores: {row['valores']}\n")
+                    file_name = f"{output_dir}/{row['nome']}.docx"
+                    doc = Document()
+                    doc.add_heading('Informações', level=1)
+                    doc.add_paragraph(f"Nome: {row['nome']}")
+                    doc.add_paragraph(f"Estado Civil: {row['estado civil']}")
+                    doc.add_paragraph(f"Profissão: {row['profissão']}")
+                    doc.add_paragraph(f"Valores: {row['valores']}")
+                    doc.save(file_name)
 
                 sg.popup('Arquivo carregado com sucesso!',
                          f'O arquivo tem {len(df)} linhas.')
