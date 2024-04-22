@@ -1,15 +1,13 @@
 import PySimpleGUI as sg
 from docx import Document
 import pandas as pd
-import os
-
 
 sg.theme('Reddit')    # Keep things interesting for your users
 layout = [
-    [sg.Text('Selecione o arquivo XLSX:'),
-     sg.InputText(key='-FILE-'), sg.FileBrowse()],
-    [sg.Text('Selecione a pasta onde será armazenado:'),
-     sg.InputText(key='-FOLDER-'), sg.FolderBrowse()],
+    [sg.FileBrowse('Selecione Arquivo XLSX:'),
+     sg.InputText(key='-FILE-')],
+    [sg.FolderBrowse('Selecione Local Para Salvar:'),
+     sg.InputText(key='-FOLDER-')],
     [sg.Button('Extrair'), sg.Button('Cancelar')]
 ]
 
