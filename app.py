@@ -1,6 +1,7 @@
 import PySimpleGUI as sg
 from docx import Document
 import pandas as pd
+from tabulate import tabulate
 
 sg.theme('Reddit')    # Keep things interesting for your users
 layout = [
@@ -25,7 +26,7 @@ while True:
 
             try:
                 df = pd.read_excel(file_path)
-                print(df)
+                print(tabulate(df, headers='keys', tablefmt='fancy_grid'))
 
                 for index, row in df.iterrows():
                     file_name = f"{output_dir}/{row['nome']}.docx"
