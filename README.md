@@ -135,6 +135,8 @@ pip install PySimpleGUI
 pip install tabulate
 
 pip install pyinstaller
+
+pip install openpyxl
 ```
 
 Agora está pronto para executar e fazer suas próprias alterações.
@@ -172,6 +174,8 @@ pip3 install PySimpleGUI
 pip3 install tabulate
 
 pip3 install pyinstaller
+
+pip3 install openpyxl
 ```
 
 Agora está pronto para executar e fazer suas próprias alterações.
